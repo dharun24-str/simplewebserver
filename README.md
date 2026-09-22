@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date: 27-08-2025
+## Date: 01-09-2025
 
 ## AIM:
 To develop a simple webserver to serve html pages and display the list of protocols in TCP/IP Protocol Suite.
@@ -37,42 +37,26 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
 ```
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
-content = '''
 <!doctype html>
 <html>
-<head>
-<title> My Web Server</title>
-</head>
-<body>
-  <center><font color="blue" face="Times new roman" size="99">
-        <b>Lists of protocols in TCP/IP Model</b>
-        </font></center>
-        <font color="red">
-        <h2>Application Layer - HTTP, FTP, DNS, Telnet<br>
-        Transport Layer - TCP & UDP<br>
-        Network Type - IPV4/TPV6<br>
-        Link Layer - Ethernet/h2>
-        </font>
-</body>
-</html>'''
+<head> <title>my first page</title>
+</head
+<Body>
+<table align="center" border="1" bgcolour="cyan" cellpadding="10">
+<caption>LIST OF PROTOCOLS IN TCP/IP PROTOCOL SUITE</caption>
+<tr><th>s.no</th><th>Name of th Layer</th><th>Name of the protocol</th></tr>
+<tr><th>1</th><th>Application Layer</th><th>HTTPS,FTP,DNS,TELNET ANS SSH</th></tr>
+<tr><th>2</th><th>Transport Layer</th><th>TCP/UDP</th></tr>
+<tr><th>3</th><th>Network Layer</th><th>IPV4/IPV6</th></tr>
+<tr><th>4</th><th>Link Layer</th><th>Ethernet</th></tr>
+</table>
+</Body>
+</html>
 
-class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
-        self.end_headers()
-        self.wfile.write(content.encode())
-
-print("This is my webserver") 
-server_address =('',1700)
-httpd = HTTPServer(server_address,MyServer)
-httpd.serve_forever()
 ```
+
 ## OUTPUT:
-![alt text](<Screenshot 2025-08-30 141924.png>)
-![alt text](<Screenshot 2025-08-30 140654.png>)
+![alt text](image.png)
+
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
